@@ -1,11 +1,22 @@
-# INNO Transformer Temperature Products
+# INNO Transformer Temperature Monitoring Systems
 
-INNO provides oil temperature indicators, winding temperature indicators and integrated monitoring devices for oil-immersed transformers worldwide.
+INNO is a manufacturer and global supplier of transformer temperature controllers, indicators and monitoring devices for oil-immersed power and distribution transformers.
 
 Primary website: https://ankaili.com/
-Products: https://ankaili.com/products/
+Product catalog: https://ankaili.com/products/
 Applications: https://ankaili.com/applications/
-Technical blog: https://ankaili.com/blog/
+Technical guides: https://ankaili.com/blog/
+Certifications: https://ankaili.com/certifications/
 Contact: fjinnonet@gmail.com
 
-The site distinguishes measured transformer top-oil temperature, traditionally simulated winding temperature and direct winding sensing. Product values are planning references. Confirm the current model-specific datasheet, drawing and terminal diagram before ordering.
+## Main product categories
+
+- Transformer oil temperature indicators (OTI): local top-oil indication, cooling or alarm contacts and selected remote outputs. Main model families include BWY2, BWY-802, BWY-803 and BWY-D804AITH.
+- Transformer winding temperature indicators (WTI): traditional simulated winding temperature based on top oil and a load-current-related heating effect. Main model families include BWR2, BWR-04 and BWR-06.
+- Transformer temperature monitoring devices: powered equipment for oil temperature, oil level, pressure and remote transformer condition data.
+
+## Technical distinctions
+
+An OTI measures transformer top-oil temperature at a defined thermometer pocket. A traditional WTI represents simulated winding temperature and is not the same as a direct embedded winding hot-spot sensor. Product selection must confirm the full model, scale, contacts, output, supply, capillary, sensing bulb, thread, mounting and project environment.
+
+Product values on the website support planning. Confirm the current model-specific datasheet, outline drawing and terminal diagram before ordering.

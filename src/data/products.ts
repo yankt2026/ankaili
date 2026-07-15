@@ -21,8 +21,8 @@ export interface Product {
 export const products: Product[] = [
   {
     slug:'bwr2-transformer-winding-temperature-indicator', name:'BWR2 Transformer Winding Temperature Indicator', model:'BWR2', category:'Winding Temperature Indicators', categorySlug:'transformer-winding-temperature-indicators',
-    title:'BWR2 Winding Temperature Indicator | INNO',
-    description:'Specify an INNO BWR2 transformer winding temperature indicator for simulated winding temperature, cooling control, alarm, trip and remote output.',
+    title:'BWR2 Transformer Winding Temperature Indicator (WTI) | INNO',
+    description:'Select a BWR2 transformer winding temperature indicator for simulated winding temperature, cooling, alarm, trip and remote output. Request current data.',
     summary:'A mechanical WTI gauge and compound transmitter for simulated winding temperature indication on oil-immersed transformers, with adjustable contacts and remote signal options.',
     image:'/images/products/bwr2-winding-temperature-indicator.webp', detailImage:'/images/products/bwr2-winding-temperature-indicator-detail.webp',
     featured:['Simulated winding temperature based on top-oil temperature and load-current heating','Four adjustable contacts for cooling, alarm and trip circuits','Pt100 output with 4-20 mA and remote display options by configuration'],
@@ -35,8 +35,8 @@ export const products: Product[] = [
   },
   {
     slug:'bwy2-transformer-oil-temperature-indicator', name:'BWY2 Transformer Oil Temperature Indicator', model:'BWY2', category:'Oil Temperature Indicators', categorySlug:'transformer-oil-temperature-indicators',
-    title:'BWY2 Oil Temperature Indicator | INNO',
-    description:'Review the INNO BWY2 transformer oil temperature indicator for top-oil indication, cooling control, alarm contacts and remote Pt100 output.',
+    title:'BWY2 Transformer Oil Temperature Indicator (OTI) | INNO',
+    description:'Select a BWY2 transformer oil temperature indicator for top-oil measurement, cooling and alarm contacts, plus Pt100 or configured remote output.',
     summary:'An OTI gauge for transformer top-oil temperature indication, adjustable cooling and alarm contacts, and remote measurement output.',
     image:'/images/products/bwy2-oil-temperature-indicator.webp', detailImage:'/images/products/bwy2-oil-temperature-indicator-detail.webp',
     featured:['Top-oil temperature indication for oil-immersed transformers','Two to four adjustable contacts for cooling and alarm functions','Pt100 output with optional 4-20 mA and remote display configurations'],
@@ -49,8 +49,8 @@ export const products: Product[] = [
   },
   {
     slug:'bwr-04-06-winding-temperature-controller', name:'BWR-04/06 Winding Temperature Controller', model:'BWR-04 / BWR-06', category:'Winding Temperature Indicators', categorySlug:'transformer-winding-temperature-indicators',
-    title:'BWR-04/06 Winding Temperature Controller | INNO',
-    description:'Compare BWR-04 and BWR-06 transformer winding temperature controller configurations, outputs, contacts, bulb, thread and capillary requirements.',
+    title:'BWR-04/06 Transformer Winding Temperature Controller | INNO',
+    description:'Compare BWR-04 and BWR-06 transformer winding temperature controller ranges, contacts, 4-20 mA output, CT input and installation interfaces.',
     summary:'A BWR winding thermometer family for simulated winding temperature, switch control and remote 4-20 mA configurations.',
     image:'/images/products/bwr-04-06-winding-temperature-controller.jpg', detailImage:'/images/products/bwr-04-06-winding-temperature-controller-detail.jpg',
     featured:['Default 0-150°C scale with optional 0-160°C configuration','Mechanical indication with switch and 4-20 mA model options','Standard Φ14 × 150 mm bulb, M27 × 2 thread and 5 m capillary'],
@@ -63,8 +63,8 @@ export const products: Product[] = [
   },
   {
     slug:'bwy-802-803-oil-temperature-controller', name:'BWY-802/803 Oil Temperature Controller', model:'BWY-802 / BWY-803', category:'Oil Temperature Indicators', categorySlug:'transformer-oil-temperature-indicators',
-    title:'BWY-802/803 Oil Temperature Controller | INNO',
-    description:'Specify a BWY-802 or BWY-803 transformer oil temperature controller with Pt100 output, adjustable contacts, M27 × 2 thread and 5 m capillary.',
+    title:'BWY-802/803 Transformer Oil Temperature Controller | INNO',
+    description:'Compare BWY-802 and BWY-803 transformer oil temperature controllers with Pt100 output, adjustable contacts, M27 × 2 thread and capillary options.',
     summary:'A transformer top-oil temperature controller with local indication, Pt100 remote signal and adjustable control contacts.',
     image:'/images/products/bwy-802-803-oil-temperature-controller.jpg', detailImage:'/images/products/bwy-802-803-oil-temperature-controller-detail.jpg',
     featured:['0-100°C or 0-120°C measuring ranges','Pt100 resistance output for remote indication','Outdoor IP55 construction with adjustable contacts'],
@@ -77,8 +77,8 @@ export const products: Product[] = [
   },
   {
     slug:'bwy-d804aith-digital-oil-temperature-controller', name:'BWY-D804AITH Digital Oil Temperature Controller', model:'BWY-D804AITH', category:'Oil Temperature Indicators', categorySlug:'transformer-oil-temperature-indicators',
-    title:'BWY-D804AITH Digital Oil Temperature Controller',
-    description:'Review BWY-D804AITH digital transformer oil temperature controller ranges, 4 or 6 contacts, Pt100 and 4-20 mA outputs, dimensions and options.',
+    title:'BWY-D804AITH Digital Oil Temperature Controller | INNO',
+    description:'Review the BWY-D804AITH digital transformer oil temperature controller with four or six contacts, Pt100, 4-20 mA and remote display options.',
     summary:'A digital-capable transformer oil temperature controller with multiple switch contacts, Pt100 and current-signal options for local and remote monitoring.',
     image:'/images/products/bwy-d804aith-digital-oil-temperature-controller.jpg', detailImage:'/images/products/bwy-d804aith-digital-oil-temperature-controller-detail.jpg',
     featured:['Four or six independently adjustable contacts','Pt100 and 4-20 mA output configurations','Multiple scale, power and capillary options for project matching'],
@@ -91,8 +91,8 @@ export const products: Product[] = [
   },
   {
     slug:'oil-temperature-level-pressure-monitoring-device', name:'Oil Temperature, Level and Pressure Monitoring Device', model:'IB-YKTCF-OL/OP', category:'Monitoring Devices', categorySlug:'transformer-temperature-monitoring-devices',
-    title:'Transformer Oil Temperature Level Pressure Monitor',
-    description:'Monitor transformer oil temperature, oil level and absolute pressure with one IP68 device, DC 12-24 V supply and RS485 communication.',
+    title:'Transformer Oil Temperature, Level & Pressure Monitor | INNO',
+    description:'Monitor transformer oil temperature, oil level and absolute pressure with an IP68 device, DC 12-24 V supply and RS485 remote communication.',
     summary:'An integrated transformer monitoring device for oil temperature, oil level and absolute pressure with RS485 output.',
     image:'/images/products/oil-temperature-level-pressure-monitoring-device.jpg', detailImage:'/images/products/oil-temperature-level-pressure-monitoring-device-detail.webp',
     featured:['Three measured variables in one transformer-mounted device','RS485 connection to an intelligent terminal','IP68 enclosure and DC 12-24 V supply'],

@@ -1,13 +1,80 @@
 ---
-import Base from '../layouts/BaseLayout.astro';import EmailCTA from '../components/EmailCTA.astro';import {products} from '../data/products';import {applications} from '../data/applications';import {site} from '../config/site';
-const schema=[{'@context':'https://schema.org','@type':'Organization',name:'INNO',url:site.siteUrl,email:site.email,logo:new URL('/images/logo/inno-logo.png',site.siteUrl).toString(),description:site.description},{'@context':'https://schema.org','@type':'WebSite',name:site.name,url:site.siteUrl,inLanguage:'en'}];
+import Base from '../layouts/BaseLayout.astro';
+import EmailCTA from '../components/EmailCTA.astro';
+import { products } from '../data/products';
+import { applications } from '../data/applications';
+import { site } from '../config/site';
+const schema=[
+  {'@context':'https://schema.org','@type':'Organization',name:'INNO',url:site.siteUrl,email:site.email,logo:new URL('/images/logo/inno-logo.png',site.siteUrl).toString(),description:'Manufacturer and supplier of transformer temperature monitoring systems, OTI oil temperature indicators, WTI winding temperature indicators and monitoring devices.'},
+  {'@context':'https://schema.org','@type':'WebSite',name:site.name,url:site.siteUrl,inLanguage:'en'}
+];
 ---
-<Base title="Transformer Oil & Winding Temperature Indicators" description="INNO supplies transformer oil temperature indicators, winding temperature indicators and monitoring devices for oil-immersed transformer projects worldwide." schema={schema} image="/images/scenes/transformer-substation-hero.png">
-  <section class="hero"><img class="hero-scene" src="/images/scenes/transformer-substation-hero.png" alt="Oil-immersed power transformer in a high-voltage substation" width="1792" height="1024"><div class="hero-shade"></div><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">Oil-immersed transformer instruments</p><h1>Transformer temperature, clearly controlled.</h1><p>Specify oil and winding temperature indicators for local reading, cooling control, alarm, trip and remote monitoring.</p><div class="actions"><a class="button" href="/products/">Compare products</a><a class="text-link" href={`mailto:${site.email}?subject=Transformer%20temperature%20product%20inquiry`}>Email INNO</a></div></div><div class="hero-panel"><img src="/images/products/bwr2-winding-temperature-indicator.webp" alt="INNO BWR2 winding temperature indicator for oil-immersed transformers" width="800" height="800"><strong>Selection starts with the measured value</strong><dl><div><dt>Top-oil temperature</dt><dd>OTI</dd></div><div><dt>Simulated winding temperature</dt><dd>WTI</dd></div><div><dt>Temperature, level and pressure</dt><dd>RS485</dd></div></dl></div></div></section>
-  <section class="section"><div class="container"><div class="section-head"><h2>One focused transformer instrument range</h2><p class="lead">INNO organizes the range around the actual thermal value and control task, not a generic list of electrical accessories.</p></div><div class="grid two"><article class="card metric"><h3>Oil temperature indicators</h3><p>BWY and BWY2 instruments indicate transformer top-oil temperature and provide contacts for cooling and alarm functions.</p><a class="arrow" href="/products/transformer-oil-temperature-indicators/">Compare oil indicators</a></article><article class="card metric"><h3>Winding temperature indicators</h3><p>BWR and BWR2 systems combine top-oil temperature with a load-related thermal rise to indicate simulated winding temperature.</p><a class="arrow" href="/products/transformer-winding-temperature-indicators/">Compare winding indicators</a></article><article class="card metric"><h3>Integrated monitoring devices</h3><p>Powered field devices acquire oil temperature with oil level and pressure for a compatible remote terminal.</p><a class="arrow" href="/products/transformer-temperature-monitoring-devices/">Review monitoring devices</a></article><article class="card metric"><h3>Replacement and customization</h3><p>Match model code, scale, contacts, signal, capillary, bulb, thread and mounting before approving a replacement.</p><a class="arrow" href="/oem-customization/">Review selection inputs</a></article></div></div></section>
-  <section class="section tint"><div class="container"><div class="section-head"><h2>Product data organized for model selection</h2><p class="lead">Each page organizes model data, configuration choices and the documents required before an order is approved.</p></div><div class="grid">{products.slice(0,4).map(product=><article class="card"><a href={`/products/${product.slug}/`}><img src={product.image} alt={`${product.model} transformer temperature indicator product`} width="800" height="800" loading="lazy"></a><p class="eyebrow">{product.model}</p><h3><a href={`/products/${product.slug}/`}>{product.name}</a></h3><p>{product.summary}</p><a class="arrow" href={`/products/${product.slug}/`}>Review specifications</a></article>)}</div></div></section>
-  <section class="section"><div class="container prose"><h2>What is transformer temperature monitoring?</h2><div class="answer-block">Transformer temperature monitoring is the coordinated indication, control and remote acquisition of thermal values that describe oil-immersed transformer operation. An oil temperature indicator measures top oil. A winding temperature indicator simulates winding temperature from top-oil temperature and load current. Powered monitoring devices can send additional values to a remote system.</div><p>The distinction matters because each value supports a different engineering interpretation. Top-oil temperature shows the condition of the cooling medium near the sensing point. Simulated winding temperature adds a calibrated thermal rise to represent load effect. Direct embedded winding hot-spot measurement uses another measurement architecture and should not be described as the same function.</p><p>A complete project also defines what happens after measurement. Adjustable contacts can start fans or pumps, issue a high-temperature alarm or contribute to trip logic. Pt100, 4-20 mA and RS485 interfaces can carry values to a panel or supervisory system. Selection therefore includes both the field instrument and the receiving control chain.</p></div></section>
-  <section class="section tint"><div class="container scene-layout"><div><img class="scene-image" src="/images/scenes/transformer-temperature-inspection.png" alt="Electrical engineer inspecting a transformer temperature instrument in a substation" width="1536" height="1024" loading="lazy"></div><div><div class="section-head"><p class="eyebrow">Field applications</p><h2>Engineering paths for new and existing transformers</h2></div><div class="application-list">{applications.slice(0,4).map((item,index)=><article><span>0{index+1}</span><div><h3><a href={`/applications/${item.slug}/`}>{item.title}</a></h3><p>{item.intro}</p><a class="arrow" href={`/applications/${item.slug}/`}>Plan the application</a></div></article>)}</div></div></div></section>
-  <section class="section"><div class="container grid two"><div class="prose"><h2>Prepare a useful product inquiry</h2><p>A model recommendation is more reliable when the email includes the transformer type, existing model, measuring range, contact functions, signal, power supply, capillary, bulb and thread, mounting interface, quantity and destination. Attach a nameplate photograph or drawing for replacement work.</p><a class="button" href="/contact/">View the email checklist</a></div><div class="card"><h3>Common signal options</h3><p><strong>Pt100:</strong> a resistance signal that requires a compatible receiving input.</p><p><strong>4-20 mA:</strong> a conditioned current loop with a defined temperature scale.</p><p><strong>RS485:</strong> digital communication that requires an agreed protocol, address and register map.</p></div></div></section>
-  <EmailCTA subject="INNO transformer temperature instrument inquiry" />
+<Base title="Transformer Temperature Monitoring System Manufacturer | INNO" description="INNO manufactures transformer temperature monitoring systems, OTI and WTI controllers, BWY oil indicators and BWR winding indicators for global projects." schema={schema} image="/images/scenes/transformer-substation-hero.png">
+  <section class="hero">
+    <img class="hero-scene" src="/images/scenes/transformer-substation-hero.png" alt="Oil-immersed power transformer at a high-voltage substation" width="1792" height="1024">
+    <div class="hero-shade"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">OTI, WTI, BWY and BWR manufacturer</p>
+        <h1>Transformer Temperature Monitoring Systems and Controllers</h1>
+        <p>Specify oil temperature indicators, winding temperature indicators and remote monitoring devices for oil-immersed transformer cooling, alarm, trip and SCADA projects.</p>
+        <div class="actions"><a class="button" href="/products/">Compare transformer controllers</a><a class="text-link" href={`mailto:${site.email}?subject=Transformer%20temperature%20monitoring%20system%20inquiry`}>Email INNO</a></div>
+      </div>
+      <div class="hero-panel">
+        <img src="/images/products/bwr2-winding-temperature-indicator.webp" alt="BWR2 transformer winding temperature indicator WTI" width="800" height="800">
+        <strong>Start with the required measurement</strong>
+        <dl><div><dt>Transformer top-oil temperature</dt><dd>OTI / BWY</dd></div><div><dt>Simulated winding temperature</dt><dd>WTI / BWR</dd></div><div><dt>Temperature, level and pressure</dt><dd>Monitoring device</dd></div></dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Product portfolio</p><h2>OTI, WTI and Transformer Temperature Monitoring Devices</h2><p class="lead">INNO supplies focused instrument families for local indication, thermal control and remote transformer monitoring.</p></div>
+      <div class="grid two">
+        <article class="card metric"><h3>Transformer Oil Temperature Indicators (OTI)</h3><p>BWY and BWY2 oil temperature indicators measure transformer top-oil temperature and operate adjustable contacts for cooling or high-temperature alarm.</p><a class="arrow" href="/products/transformer-oil-temperature-indicators/">Compare BWY oil temperature indicators</a></article>
+        <article class="card metric"><h3>Transformer Winding Temperature Indicators (WTI)</h3><p>BWR and BWR2 winding temperature indicators combine top-oil sensing with load-current thermal simulation for winding indication and control.</p><a class="arrow" href="/products/transformer-winding-temperature-indicators/">Compare BWR winding temperature indicators</a></article>
+        <article class="card metric"><h3>Transformer Temperature Monitoring Devices</h3><p>Powered monitoring devices acquire transformer oil temperature with oil level and pressure for compatible remote terminals and supervisory systems.</p><a class="arrow" href="/products/transformer-temperature-monitoring-devices/">Review transformer monitoring devices</a></article>
+        <article class="card metric"><h3>Custom Controller and Replacement Selection</h3><p>Match range, contacts, signal, capillary, bulb, thread, mounting and existing terminal arrangement before approving a new or replacement controller.</p><a class="arrow" href="/oem-customization/">Review OEM and replacement options</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Model families</p><h2>BWY Oil and BWR Winding Temperature Controller Models</h2><p class="lead">Compare real product images and model-specific planning data before requesting the current datasheet, drawing and quotation.</p></div>
+      <div class="grid">{products.slice(0,4).map(product=><article class="card"><a href={`/products/${product.slug}/`}><img src={product.image} alt={`${product.model} transformer temperature controller`} width="800" height="800" loading="lazy"></a><p class="eyebrow">{product.model}</p><h3><a href={`/products/${product.slug}/`}>{product.name}</a></h3><p>{product.summary}</p><a class="arrow" href={`/products/${product.slug}/`}>View {product.model} specifications</a></article>)}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <article class="container prose">
+      <p class="eyebrow">Direct technical answer</p>
+      <h2>What Is a Transformer Temperature Monitoring System?</h2>
+      <div class="answer-block"><strong>A transformer temperature monitoring system</strong> measures or derives defined thermal values, displays them locally or remotely, and provides outputs for cooling, alarm or trip logic. An OTI measures top-oil temperature. A traditional WTI combines top-oil temperature with a load-current-related thermal rise to indicate simulated winding temperature. A digital monitoring device can transmit temperature and other transformer condition values to a remote system.</div>
+      <p>These values are related but not interchangeable. Top-oil temperature describes the oil near the specified thermometer pocket. Simulated winding temperature estimates the additional thermal effect of transformer load. Direct winding hot-spot measurement requires sensors designed into the winding and represents another measurement architecture.</p>
+      <h3>How do temperature controllers support transformer protection?</h3>
+      <p>Adjustable contacts can start transformer fans or pumps, initiate a high-temperature alarm or provide an input to trip logic. Set points and switching duties must follow the transformer thermal design and protection scheme. The complete control chain includes the temperature instrument, terminal wiring, interposing relays and the final cooling or protection equipment.</p>
+      <h3>Which remote signals are available?</h3>
+      <p>Common project interfaces include Pt100 resistance output, conditioned 4-20 mA current loops and RS485 communications. Selection must define the signal scale, supply, wiring, shielding, protocol and receiving equipment. A remote signal should always retain the measurement identity, such as top oil or simulated winding temperature.</p>
+    </article>
+  </section>
+
+  <section class="section tint">
+    <div class="container scene-layout">
+      <div><img class="scene-image" src="/images/scenes/transformer-temperature-inspection.png" alt="Oil-immersed transformers in an outdoor electrical substation" width="1536" height="1024" loading="lazy"></div>
+      <div>
+        <div class="section-head"><p class="eyebrow">Application engineering</p><h2>Transformer Temperature Monitoring Applications</h2><p class="lead">Choose the product after defining the transformer, thermal variable, operating decision and receiving system.</p></div>
+        <div class="application-list">{applications.slice(0,4).map((item,index)=><article><span>0{index+1}</span><div><h3><a href={`/applications/${item.slug}/`}>{item.title}</a></h3><p>{item.intro}</p><a class="arrow" href={`/applications/${item.slug}/`}>Review {item.title.toLowerCase()}</a></div></article>)}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid two">
+      <article class="prose"><p class="eyebrow">Procurement checklist</p><h2>Request a Transformer Temperature Controller Quotation</h2><p>Include the transformer type and rating, OTI or WTI requirement, existing model, measuring range, switch functions, Pt100, 4-20 mA or RS485 interface, supply, capillary, bulb and thread, quantity and destination country. Attach a nameplate photograph or mounting drawing for replacement work.</p><div class="actions"><a class="button" href="/contact/">Prepare a technical inquiry</a><a class="text-link" href="/certifications/">Review qualification documents</a></div></article>
+      <article class="card"><h3>Manufacturer and supplier support</h3><p>Use the product pages to compare model families, then email the final requirement for configuration review, current technical documents and commercial quotation.</p><p><strong>Product groups:</strong> OTI, WTI and integrated monitoring devices.</p><p><strong>Model families:</strong> BWY, BWY2, BWR and BWR2.</p><p><strong>Project types:</strong> new transformer, OEM configuration and replacement.</p></article>
+    </div>
+  </section>
+  <EmailCTA title="Specify a Transformer Temperature Monitoring System" subject="INNO transformer temperature monitoring system inquiry" />
 </Base>
