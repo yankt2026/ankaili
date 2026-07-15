@@ -17,7 +17,7 @@ const schema = {
 <Base title={pageTitle} description={post.description} schema={schema} breadcrumbs={[{name:'Home',url:'/'},{name:'Blog',url:'/blog/'},{name:post.title,url:canonical}]}>
   <article>
     <header class="article-hero"><div class="container"><p class="eyebrow">{post.category}</p><h1>{post.title}</h1><p>{post.description}</p><p class="article-meta">Updated 15 July 2026 · Technical guide</p></div></header>
-    <div class="container article-layout"><div class="prose blog-prose"><div set:html={articleHtml(post)} /></div><aside class="article-aside"><p class="eyebrow">Need model confirmation?</p><p>Send the full model, scale, contacts, signal, capillary and destination country.</p><a class="button" href={`mailto:fjinnonet@gmail.com?subject=${encodeURIComponent(post.title + ' inquiry')}`}>Email INNO</a></aside></div>
+    <div class="container article-layout"><div class="prose blog-prose"><div set:html={articleHtml(post)} /></div><aside class="article-aside"><p class="eyebrow">Request technical documents</p><p>Send the full model, scale, contacts, signal, capillary, quantity and destination country.</p><a class="button" href={`mailto:fjinnonet@gmail.com?subject=${encodeURIComponent(post.title + ' inquiry')}`}>Request Datasheet and Quote</a></aside></div>
   </article>
   <EmailCTA subject={`${post.title} product inquiry`} />
 </Base>

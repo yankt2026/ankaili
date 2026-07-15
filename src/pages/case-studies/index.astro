@@ -5,15 +5,15 @@ import { caseStudies } from '../../data/case-studies';
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'Transformer Temperature Monitoring Case Studies',
+  name: 'Transformer Temperature Monitoring Project Scenarios',
   description: 'Country-based transformer temperature monitoring configurations for OTI, WTI, BWY and BWR selection.',
   mainEntity: { '@type': 'ItemList', itemListElement: caseStudies.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.title, url: `https://ankaili.com/case-studies/${item.slug}/` })) }
 };
 ---
-<Base title="Transformer Temperature Monitoring Case Studies | INNO" description="Explore country-based transformer temperature monitoring configurations for OTI, WTI, BWY and BWR selection, integration and retrofit planning." schema={schema}>
-  <section class="page-hero"><div class="container"><p class="eyebrow">Country applications</p><h1>Transformer Temperature Monitoring Case Studies</h1><p>Country-based engineering examples for selecting oil and winding temperature indication, control contacts and remote interfaces.</p></div></section>
+<Base title="Transformer Temperature Monitoring Project Scenarios | INNO" description="Explore country-based transformer temperature monitoring scenarios for OTI, WTI, BWY and BWR selection, integration and retrofit planning." schema={schema}>
+  <section class="page-hero"><div class="container"><p class="eyebrow">Country application scenarios</p><h1>Transformer Temperature Monitoring by Country</h1><p>See how climate, transformer duty, local indication, control contacts and remote monitoring affect OTI, WTI, BWY and BWR selection.</p></div></section>
   <section class="section"><div class="container">
-    <div class="section-head"><h2>Transformer Configurations by Country</h2><p class="lead">Compare the application context, measured variable, controller family, signal path and commissioning scope.</p></div>
+    <div class="section-head"><h2>Application and Equipment Needs by Country</h2><p class="lead">Compare the operating environment, measured temperature, controller family, signal path and installation checks.</p></div>
     <div class="case-grid">{caseStudies.map((item, index) =>
       <article class:list={['case-card', index === 0 && 'case-card-feature']}>
         <a class="case-card-media" href={`/case-studies/${item.slug}/`} aria-label={`View ${item.title}`}><img src={item.image} alt={`${item.country} oil-immersed transformer monitoring environment`} width="1792" height="1024" loading={index < 2 ? 'eager' : 'lazy'} style={`object-position:${item.imagePosition}`}></a>
@@ -21,6 +21,6 @@ const schema = {
       </article>
     )}</div>
   </div></section>
-  <section class="section tint"><article class="container prose"><h2>What Makes a Transformer Temperature Configuration Useful?</h2><p>A useful project record identifies whether the transformer needs top-oil indication, simulated winding temperature, cooling contacts, alarm or trip outputs and remote monitoring. It also records the complete model, scale, terminal functions, capillary, sensing bulb, mounting and receiving-system interfaces.</p><h3>Use the configuration as a starting point</h3><p>Country and application context help identify environmental and operating questions, but they do not replace the transformer drawings or project specification. Final OTI, WTI, BWY or BWR selection remains model-specific.</p></article></section>
-  <EmailCTA title="Review a Transformer Project Configuration" subject="Transformer temperature configuration review" />
+  <section class="section tint"><article class="container prose"><h2>What Buyers Need to Specify</h2><p>State whether the transformer needs top-oil indication, simulated winding temperature, cooling contacts, alarm or trip outputs and remote monitoring. Include the complete model, scale, terminal functions, capillary, sensing bulb, mounting details and receiving-system input.</p><h3>Match the product to the transformer</h3><p>Send the transformer drawings and project specification so the OTI, WTI, BWY or BWR model can be checked against the actual installation.</p></article></section>
+  <EmailCTA title="Request Product Selection and Pricing" subject="Transformer temperature product selection and quote" />
 </Base>

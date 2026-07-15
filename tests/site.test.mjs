@@ -87,3 +87,27 @@ test('solutions hub is integrated without generic detail links', () => {
   assert.match(layout, /\['Solutions','\/solutions\/'\]/);
   assert.equal((data.match(/slug:\s*'/g) || []).length, 6);
 });
+
+test('public copy contains no internal answer or editorial labels', () => {
+  const files = fs.readdirSync(path.join(root, 'src'), { recursive: true })
+    .filter((file) => /\.(astro|tsx?|mdx?)$/.test(file));
+  const banned = /Direct answer\.|Product selection answer\.|Solution selection answer\.|Application planning answer\.|Customization answer\.|Direct technical answer|Direct engineering contact|Procurement note/i;
+  for (const file of files) assert.doesNotMatch(read(path.join('src', file)), banned, file);
+});
+
+test('buyer journey uses clear datasheet quotation and sales CTAs', () => {
+  const home = read('src/pages/index.astro');
+  const product = read('src/pages/products/[slug].astro');
+  const contact = read('src/pages/contact.astro');
+  assert.match(home, /Request a Datasheet and Quote/);
+  assert.match(product, /Request Datasheet and Quote/);
+  assert.match(contact, /Email Our Sales Team/);
+});
+
+test('technical articles use five search-intent renderers', () => {
+  const body = read('src/data/blogs.ts');
+  for (const name of ['renderGuideArticle', 'renderModelArticle', 'renderComparisonArticle', 'renderSystemArticle', 'renderInstallationArticle']) {
+    assert.match(body, new RegExp(`function ${name}\\(`));
+  }
+  assert.doesNotMatch(body, /const paragraphs=\[/);
+});

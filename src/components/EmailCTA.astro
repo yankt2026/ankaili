@@ -2,13 +2,13 @@
 import { mailto, site } from '../config/site';
 interface Props { title?: string; text?: string; subject?: string; label?: string; }
 const {
-  title = 'Discuss Your Transformer Temperature Requirement',
-  text = 'Email the transformer type, model reference, measuring range, output, switch contacts, capillary length, quantity and destination country. INNO will reply with the applicable configuration details.',
+  title = 'Request a Datasheet and Quote',
+  text = 'Tell us the transformer type, required temperature range, contact functions, output signal, capillary length, quantity and destination. We will help you identify a suitable model and send the available technical documents.',
   subject = 'Transformer temperature product inquiry',
-  label = 'Email INNO'
+  label = 'Email Our Sales Team'
 } = Astro.props;
 ---
 <section class="cta">
-  <div><p class="eyebrow">Direct engineering contact</p><h2>{title}</h2><p>{text}</p></div>
+  <div><p class="eyebrow">Sales and engineering support</p><h2>{title}</h2><p>{text}</p></div>
   <div class="actions"><a class="button light" href={mailto(subject)}>{label}</a><a class="text-link" href={`mailto:${site.email}`}>{site.email}</a></div>
 </section>
