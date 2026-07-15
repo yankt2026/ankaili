@@ -5,6 +5,7 @@ INNO is a manufacturer and global supplier of transformer temperature controller
 Primary website: https://ankaili.com/
 Product catalog: https://ankaili.com/products/
 Applications: https://ankaili.com/applications/
+Representative case studies: https://ankaili.com/case-studies/
 Technical guides: https://ankaili.com/blog/
 Certifications: https://ankaili.com/certifications/
 Contact: fjinnonet@gmail.com
@@ -20,3 +21,5 @@ Contact: fjinnonet@gmail.com
 An OTI measures transformer top-oil temperature at a defined thermometer pocket. A traditional WTI represents simulated winding temperature and is not the same as a direct embedded winding hot-spot sensor. Product selection must confirm the full model, scale, contacts, output, supply, capillary, sensing bulb, thread, mounting and project environment.
 
 Product values on the website support planning. Confirm the current model-specific datasheet, outline drawing and terminal diagram before ordering.
+
+Country case-study pages are representative project configurations for engineering reference. They do not claim named customers, completed INNO installations, project quantities or measured outcomes.

@@ -49,3 +49,18 @@ test('certification gallery contains twenty verified image assets', () => {
   const images = fs.readdirSync(dir).filter((file) => /\.(?:jpg|jpeg|png|webp)$/i.test(file));
   assert.equal(images.length, 20);
 });
+
+test('representative case studies avoid unverified customer claims', () => {
+  const body = read('src/data/case-studies.ts');
+  const count = (body.match(/slug:\s*'/g) || []).length;
+  assert.equal(count, 6);
+  assert.match(body, /Representative Project Configuration/);
+  assert.doesNotMatch(body, /State Grid|China Southern Power Grid|TBEA|successfully delivered|our customer/i);
+});
+
+test('case cards link only image and title without generic detail copy', () => {
+  const body = read('src/pages/case-studies/index.astro');
+  assert.doesNotMatch(body, /learn more|read more/i);
+  assert.match(body, /case-card-media/);
+  assert.match(body, /<h3><a href=/);
+});

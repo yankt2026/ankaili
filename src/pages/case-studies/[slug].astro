@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+import EmailCTA from '../../components/EmailCTA.astro';
+import { caseStudies, caseStudyLabel, type CaseStudy } from '../../data/case-studies';
+import { applications } from '../../data/applications';
+import { products } from '../../data/products';
+export function getStaticPaths(){ return caseStudies.map(item => ({ params: { slug: item.slug }, props: { item } })); }
+const { item } = Astro.props as { item: CaseStudy };
+const application = applications.find(entry => entry.slug === item.applicationSlug)!;
+const relatedProducts = products.filter(product => item.productSlugs.includes(product.slug));
+const canonical = `/case-studies/${item.slug}/`;
+const breadcrumbs = [{name:'Home',url:'/'},{name:'Case Studies',url:'/case-studies/'},{name:item.title,url:canonical}];
+const schema = {'@context':'https://schema.org','@type':'Article',headline:item.title,description:item.description,image:`https://ankaili.com${item.image}`,author:{'@type':'Organization',name:'INNO'},publisher:{'@type':'Organization',name:'INNO'},datePublished:'2026-07-15',dateModified:'2026-07-15',mainEntityOfPage:`https://ankaili.com${canonical}`};
+---
+<Base title={item.seoTitle} description={item.description} image={item.image} breadcrumbs={breadcrumbs} schema={schema} ogType="article">
+  <article>
+    <header class="case-hero"><img src={item.image} alt={`${item.country} transformer temperature monitoring application`} width="1792" height="1024" style={`object-position:${item.imagePosition}`}><div class="case-hero-overlay"></div><div class="container case-hero-copy"><p class="eyebrow">{item.country} representative configuration</p><h1>{item.title}</h1><p>{item.description}</p></div></header>
+    <section class="section case-intro"><div class="container"><div class="case-disclosure"><strong>{caseStudyLabel}</strong><p>This page explains a technically plausible selection path for this country and application. It does not identify a customer, contract, installed quantity or completed INNO project.</p></div></div></section>
+    <section class="section"><article class="container prose">
+      <h2>Project Context</h2>{item.context.map(text => <p>{text}</p>)}
+      <h2>Monitoring Requirement</h2>{item.requirement.map(text => <p>{text}</p>)}
+      <h2>Representative OTI and WTI Configuration</h2>{item.configuration.map(text => <p>{text}</p>)}
+      <h2>Signal, Cooling and Protection Interfaces</h2>{item.interfaces.map(text => <p>{text}</p>)}
+      <h2>Installation and Commissioning Checklist</h2><div class="case-check-grid">{item.checklist.map(check => <div>{check}</div>)}</div>
+    </article></section>
+    <section class="section tint"><div class="container"><div class="section-head"><h2>Related Transformer Temperature Products</h2><p class="lead">Confirm the complete suffix, technical documents and project interfaces before selecting a final model.</p></div><div class="grid two">{relatedProducts.map(product => <article class="card"><a href={`/products/${product.slug}/`}><img src={product.image} alt={`${product.model} transformer temperature controller`} width="800" height="800" loading="lazy"></a><h3><a href={`/products/${product.slug}/`}>{product.name}</a></h3><p>{product.summary}</p></article>)}</div><p class="case-application-link">Application guidance: <a href={`/applications/${application.slug}/`}>{application.title}</a></p></div></section>
+  </article>
+  <EmailCTA title="Request a Project Configuration Review" subject={`${item.country} transformer temperature configuration review`} />
+</Base>
