@@ -16,7 +16,6 @@ export interface Product {
   selection: string[];
   installation: string[];
   applications: string[];
-  sourceUrl: string;
 }
 
 export const products: Product[] = [
@@ -33,7 +32,6 @@ export const products: Product[] = [
     selection:['Provide the complete existing BWR2 model code, number and purpose of switch contacts, required signal output, CT secondary current, capillary length, remote display requirement and environmental conditions.','Confirm whether the order is for a new transformer or a retrofit. A retrofit also requires the existing mounting dimensions, thermometer pocket, bulb arrangement, cable entries and terminal diagram.'],
     installation:['Install the indicator vertically where the dial can be read and serviced. Protect the capillary from crushing, sharp bends and vibration. Insert the sensing bulb into the specified compound transmitter and thermometer pocket arrangement, then secure the route at suitable intervals.','Before energization, verify the contact continuity, terminal mapping, current-transformer circuit and remote output against the model-specific diagram. Functional testing should confirm local indication, each cooling or alarm stage and the receiving panel signal.'],
     applications:['Power transformer winding temperature indication','Cooling fan or pump stage control','Over-temperature alarm and trip protection','Retrofit of BWR-family winding thermometers'],
-    sourceUrl:'https://www.fjinno.net/product/bwr2-transformer-winding-temperature-indicator/'
   },
   {
     slug:'bwy2-transformer-oil-temperature-indicator', name:'BWY2 Transformer Oil Temperature Indicator', model:'BWY2', category:'Oil Temperature Indicators', categorySlug:'transformer-oil-temperature-indicators',
@@ -48,7 +46,6 @@ export const products: Product[] = [
     selection:['Confirm the full BWY2 model, measuring scale, switch quantity, contact use, output signal, capillary length, bulb and thread, mounting layout and need for a remote display.','For replacement work, compare the existing dial scale, terminal diagram and dimensions. Similar-looking BWY and BWY2 variants can use different contacts or output arrangements.'],
     installation:['Fill or prepare the thermometer pocket according to the transformer design and insert the bulb to its intended depth. Fix the instrument vertically and route the capillary with mechanical protection.','Test the pointer response, adjustable contacts and Pt100 or transmitter loop before the transformer enters service. Record the final set points and terminal assignments in the commissioning file.'],
     applications:['Transformer top-oil temperature indication','Radiator fan and pump control','High oil temperature alarm','Remote oil temperature display'],
-    sourceUrl:'https://www.fjinno.net/product/bwy2-transformer-oil-temperature-indicator/'
   },
   {
     slug:'bwr-04-06-winding-temperature-controller', name:'BWR-04/06 Winding Temperature Controller', model:'BWR-04 / BWR-06', category:'Winding Temperature Indicators', categorySlug:'transformer-winding-temperature-indicators',
@@ -63,7 +60,6 @@ export const products: Product[] = [
     selection:['Send the existing BWR-04 or BWR-06 code, scale, contact quantity, CT input, output, supply, capillary length and installation drawing.','Specify whether the instrument must match an existing mounting footprint or whether a new transformer design can use the current standard dimensions.'],
     installation:['Keep the instrument vertical and protect the capillary. Verify the sensing bulb, thread and pocket depth before installation.','Commission the local pointer, each switch contact, CT circuit and remote current loop. Confirm polarity and scaling at the receiving instrument.'],
     applications:['Oil-immersed transformer winding indication','BWR-04 and BWR-06 replacement projects','Remote 4-20 mA temperature indication','Cooling, alarm and trip contact control'],
-    sourceUrl:'https://www.fjinno.net/product/oil-immersed-transformer-winding-temperature-controller-oil-temperature-sensor/'
   },
   {
     slug:'bwy-802-803-oil-temperature-controller', name:'BWY-802/803 Oil Temperature Controller', model:'BWY-802 / BWY-803', category:'Oil Temperature Indicators', categorySlug:'transformer-oil-temperature-indicators',
@@ -78,7 +74,6 @@ export const products: Product[] = [
     selection:['Choose the 0-100°C or 0-120°C range, confirm contact rating and use, Pt100 wiring, capillary length, mounting dimensions and any remote conversion requirement.','For a BWY replacement, send photographs of the nameplate and terminals together with the existing installation drawing.'],
     installation:['Insert the bulb into the designated top-oil pocket with the required insertion depth. Do not shorten, kink or sharply bend the capillary.','Verify Pt100 loop resistance and receiving-instrument configuration. Test every switch point using the approved commissioning method.'],
     applications:['Distribution transformer oil temperature control','Substation remote oil temperature indication','Cooling system switching','BWY-802 and BWY-803 replacement'],
-    sourceUrl:'https://www.fjinno.net/product/oil-level-temperature-sensor-controller-for-oil-immersed-transformers-bwy-802803a/'
   },
   {
     slug:'bwy-d804aith-digital-oil-temperature-controller', name:'BWY-D804AITH Digital Oil Temperature Controller', model:'BWY-D804AITH', category:'Oil Temperature Indicators', categorySlug:'transformer-oil-temperature-indicators',
@@ -93,7 +88,6 @@ export const products: Product[] = [
     selection:['Confirm range, contact quantity, contact duty, signal, supply, capillary, enclosure mounting and remote display.','Provide the existing nameplate and panel cutout for retrofit work. Check that the receiving system accepts the specified signal and scale.'],
     installation:['Mount the enclosure securely, insert the bulb into the intended oil pocket and protect the capillary along its entire route.','Verify supply voltage before energization. Loop-test the Pt100 or current output and function-test all contact stages.'],
     applications:['Digital transformer top-oil monitoring','Four-stage or six-stage control schemes','Remote control-panel indication','Oil temperature controller modernization'],
-    sourceUrl:'https://www.fjinno.net/product/digital-oil-level-thermometer-for-oil-immersed-transformers-bwy-bwy-d804aith/'
   },
   {
     slug:'oil-temperature-level-pressure-monitoring-device', name:'Oil Temperature, Level and Pressure Monitoring Device', model:'IB-YKTCF-OL/OP', category:'Monitoring Devices', categorySlug:'transformer-temperature-monitoring-devices',
@@ -108,7 +102,6 @@ export const products: Product[] = [
     selection:['Confirm transformer type, mounting opening, oil-level geometry, required pressure reference, RS485 protocol details, supply, cable length and receiving terminal.','Confirm whether the project needs only measurement or also local alarm logic in the upstream controller.'],
     installation:['The referenced installation uses a traditional oil-level-gauge mounting location near the transformer side edge. Confirm the final drawing and sealing interface before machining or retrofit.','Connect the shielded cable to the fusion or intelligent terminal and DC supply according to the model-specific wiring instructions. Validate scaling and alarm thresholds in the receiving system.'],
     applications:['Smart distribution transformers','Combined substations','Remote transformer condition monitoring','Oil temperature, level and pressure integration'],
-    sourceUrl:'https://www.fjinno.net/product/transformer-temperature-oil-level-and-pressure-monitoring-device/'
   }
 ];
 

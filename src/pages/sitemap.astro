@@ -3,6 +3,6 @@ import Base from '../layouts/BaseLayout.astro';
 import { products } from '../data/products';
 import { applications } from '../data/applications';
 import { blogs } from '../data/blogs';
-const core=[['Home','/'],['Products','/products/'],['Applications','/applications/'],['Technical Blog','/blog/'],['OEM and Customization','/oem-customization/'],['Quality Control','/quality-control/'],['About INNO','/about/'],['Contact','/contact/']];
+const core=[['Home','/'],['Products','/products/'],['Applications','/applications/'],['Technical Blog','/blog/'],['OEM and Customization','/oem-customization/'],['Certifications','/certifications/'],['Quality Control','/quality-control/'],['About INNO','/about/'],['Contact','/contact/']];
 ---
 <Base title="HTML Sitemap | INNO" description="Browse all INNO transformer oil and winding temperature product, application and technical blog pages."><section class="page-hero"><div class="container"><p class="eyebrow">Website index</p><h1>HTML Sitemap</h1></div></section><section class="section"><div class="container grid two"><div><h2>Main pages</h2>{core.map(([name,url])=><p><a href={url}>{name}</a></p>)}<h2>Products</h2>{products.map(item=><p><a href={`/products/${item.slug}/`}>{item.name}</a></p>)}</div><div><h2>Applications</h2>{applications.map(item=><p><a href={`/applications/${item.slug}/`}>{item.title}</a></p>)}<h2>Technical guides</h2>{blogs.map(item=><p><a href={`/blog/${item.slug}/`}>{item.title}</a></p>)}</div></div></section></Base>
