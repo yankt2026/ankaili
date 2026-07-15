@@ -1,0 +1,23 @@
+{
+  "name": "inno-transformer-temperature",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro:check": "astro check",
+    "test": "node --test --test-isolation=none tests/*.test.mjs",
+    "check:dist": "node scripts/check-dist.mjs",
+    "check": "npm test && npm run astro:check && npm run build && npm run check:dist"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.110.0"
+  }
+}

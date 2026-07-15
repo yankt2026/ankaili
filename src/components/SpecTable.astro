@@ -1,0 +1,5 @@
+---
+interface Props { specs: Record<string, string>; caption?: string; }
+const { specs, caption = 'Technical specifications' } = Astro.props;
+---
+<table class="spec"><caption class="sr-only">{caption}</caption><tbody>{Object.entries(specs).map(([name,value]) => <tr><th scope="row">{name}</th><td>{value}</td></tr>)}</tbody></table>

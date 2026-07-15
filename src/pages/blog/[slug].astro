@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+import EmailCTA from '../../components/EmailCTA.astro';
+import { blogs, articleHtml } from '../../data/blogs';
+export function getStaticPaths(){ return blogs.map(post => ({ params:{slug:post.slug}, props:{post} })); }
+const { post } = Astro.props;
+const canonical = `/blog/${post.slug}/`;
+const schema = {
+  '@context':'https://schema.org', '@type':'BlogPosting', headline:post.title,
+  description:post.description,
+  datePublished:'2026-07-15', dateModified:'2026-07-15',
+  author:{'@type':'Organization',name:'INNO'}, publisher:{'@type':'Organization',name:'INNO'},
+  mainEntityOfPage:`https://ankaili.com${canonical}`
+};
+---
+<Base title={`${post.title} | INNO`} description={post.description} schema={schema} breadcrumbs={[{name:'Home',url:'/'},{name:'Blog',url:'/blog/'},{name:post.title,url:canonical}]}>
+  <article>
+    <header class="article-hero"><div class="container"><p class="eyebrow">{post.category}</p><h1>{post.title}</h1><p>{post.description}</p><p class="article-meta">Published 15 July 2026 · Technical guide</p></div></header>
+    <div class="container article-layout"><div class="prose blog-prose"><div set:html={articleHtml(post)} /></div><aside class="article-aside"><p class="eyebrow">Need model confirmation?</p><p>Send the full model, scale, contacts, signal, capillary and destination country.</p><a class="button" href={`mailto:fjinnonet@gmail.com?subject=${encodeURIComponent(post.title + ' inquiry')}`}>Email INNO</a></aside></div>
+  </article>
+  <EmailCTA subject={`${post.title} product inquiry`} />
+</Base>

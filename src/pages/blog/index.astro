@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+import EmailCTA from '../../components/EmailCTA.astro';
+import { blogs } from '../../data/blogs';
+---
+<Base title="Transformer Temperature Technical Blog | INNO" description="Technical guides for transformer oil temperature indicators, winding temperature indicators, BWY and BWR models, installation, wiring and monitoring.">
+  <section class="page-hero"><div class="container"><p class="eyebrow">Technical knowledge center</p><h1>Transformer Temperature Engineering Guides</h1><p>Practical selection, installation and integration guidance for oil-immersed transformer OTI, WTI and monitoring projects.</p></div></section>
+  <section class="section"><div class="container editorial-grid">{blogs.map((post, index) => <article class:list={["card", index === 0 && "feature-card"]}><p class="eyebrow">{post.category}</p><h2><a href={`/blog/${post.slug}/`}>{post.title}</a></h2><p>{post.description}</p><a class="arrow" href={`/blog/${post.slug}/`}>Read technical guide</a></article>)}</div></section>
+  <EmailCTA title="Discuss a Transformer Temperature Requirement" subject="Transformer temperature technical inquiry" />
+</Base>

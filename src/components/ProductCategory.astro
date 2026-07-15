@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/BaseLayout.astro';
+import EmailCTA from './EmailCTA.astro';
+import { products } from '../data/products';
+interface Props { category: string; slug: string; title: string; description: string; heading: string; intro: string; definition: string; }
+const { category, slug, title, description, heading, intro, definition } = Astro.props;
+const list=products.filter(product=>product.category===category);
+const crumbs=[{name:'Home',url:'/'},{name:'Products',url:'/products/'},{name:heading,url:`/products/${slug}/`}];
+const schema={'@context':'https://schema.org','@type':'CollectionPage',name:heading,description};
+---
+<Base title={title} description={description} breadcrumbs={crumbs} schema={schema}>
+  <section class="page-hero"><div class="container"><p class="eyebrow">Transformer instruments</p><h1>{heading}</h1><p>{intro}</p></div></section>
+  <section class="section"><div class="container"><div class="answer-block"><strong>{heading} definition.</strong> {definition}</div><div class="grid">{list.map(product=><article class="card"><a href={`/products/${product.slug}/`}><img src={product.image} alt={`${product.model} ${category.toLowerCase()} product`} width="800" height="800" loading="lazy"></a><h2><a href={`/products/${product.slug}/`}>{product.name}</a></h2><p>{product.summary}</p><a class="arrow" href={`/products/${product.slug}/`}>View model details</a></article>)}</div></div></section>
+  <section class="section tint"><div class="container prose"><h2>How to choose this product category</h2><p>Begin with the measured value. Top-oil temperature, simulated winding temperature and direct winding hot-spot temperature are not interchangeable. Define the required local display, switch functions, remote signal and receiving equipment before comparing model suffixes.</p><h2>Information needed for a quotation</h2><p>Provide the transformer type, current model or drawing, temperature range, switch quantity and duty, Pt100 or 4-20 mA output, power supply, capillary length, bulb and thread, mounting dimensions, quantity and destination country. Replacement projects should include photographs of the nameplate, terminals and installed arrangement.</p><h2>Specification control</h2><p>Family names such as BWY, BWY2, BWR and BWR2 cover several contact and output configurations. The product page provides planning data, while the current model-specific datasheet and drawing control the final order.</p></div></section>
+  <EmailCTA subject={`${heading} model selection request`} />
+</Base>

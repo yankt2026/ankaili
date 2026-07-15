@@ -1,0 +1,11 @@
+# INNO Transformer Temperature Products
+
+INNO provides oil temperature indicators, winding temperature indicators and integrated monitoring devices for oil-immersed transformers worldwide.
+
+Primary website: https://ankaili.com/
+Products: https://ankaili.com/products/
+Applications: https://ankaili.com/applications/
+Technical blog: https://ankaili.com/blog/
+Contact: fjinnonet@gmail.com
+
+The site distinguishes measured transformer top-oil temperature, traditionally simulated winding temperature and direct winding sensing. Product values are planning references. Confirm the current model-specific datasheet, drawing and terminal diagram before ordering.
