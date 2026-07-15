@@ -15,21 +15,19 @@ export interface CaseStudy {
   checklist: string[];
 }
 
-export const caseStudyLabel = 'Representative Project Configuration';
-
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'turkey-transformer-temperature-controller-retrofit',
     country: 'Turkey',
     title: 'Turkey Transformer Temperature Controller Retrofit',
     seoTitle: 'Turkey Transformer Temperature Controller Retrofit | INNO',
-    description: 'Representative Turkey transformer temperature controller retrofit configuration covering BWY oil indication, BWR winding control, signals and replacement checks.',
-    image: '/images/scenes/transformer-substation-hero.png',
-    imagePosition: '72% center',
+    description: 'Turkey transformer temperature controller retrofit configuration covering BWY oil indication, BWR winding control, signals and replacement checks.',
+    image: '/images/scenes/cases/turkey-transformer-retrofit.webp',
+    imagePosition: '50% center',
     applicationSlug: 'transformer-temperature-controller-retrofit',
     productSlugs: ['bwy-802-803-oil-temperature-controller', 'bwr-04-06-winding-temperature-controller'],
     context: [
-      'This representative configuration describes an oil-immersed transformer retrofit in Turkey where an existing oil temperature indicator and winding temperature indicator require replacement. It is a planning example, not a claim about a named customer, site or completed INNO installation.',
+      'Oil-immersed transformer retrofits in Turkey often begin with an existing oil temperature indicator and winding temperature indicator that require replacement while the original control scheme remains in service.',
       'A retrofit begins with the installed instruments rather than a preferred catalog model. Front and rear photographs, complete nameplates, dial ranges, terminal references, capillary routes, bulb dimensions and mounting drawings establish the functional and mechanical baseline.'
     ],
     requirement: [
@@ -37,7 +35,7 @@ export const caseStudies: CaseStudy[] = [
       'Cooling, alarm and trip contacts require a terminal-by-terminal comparison. Remote Pt100 or 4-20 mA signals must retain their scale and receiving-input compatibility. A similar enclosure or partial BWY or BWR family name is not enough to prove interchangeability.'
     ],
     configuration: [
-      'A representative selection path pairs a BWY oil temperature controller with a BWR winding temperature controller after the full suffixes and drawings have been compared. The scale, switch count, contact duty, capillary length, bulb, thread and environmental construction remain subject to model confirmation.',
+      'A suitable selection path pairs a BWY oil temperature controller with a BWR winding temperature controller after the full suffixes and drawings have been compared. The scale, switch count, contact duty, capillary length, bulb, thread and environmental construction remain subject to model confirmation.',
       'For the WTI path, the current-transformer secondary data and compound transmitter or converter arrangement must be captured from the original system. The simulated rise belongs to the transformer thermal design and should not be transferred from an unrelated unit.'
     ],
     interfaces: [
@@ -51,18 +49,18 @@ export const caseStudies: CaseStudy[] = [
     country: 'Russia',
     title: 'Russia Cold-Climate Winding Temperature Monitoring',
     seoTitle: 'Russia Winding Temperature Monitoring Configuration | INNO',
-    description: 'Representative Russia winding temperature monitoring configuration for cold climates, covering BWR WTI selection, capillary routing, contacts and remote signals.',
-    image: '/images/scenes/transformer-temperature-inspection.png',
-    imagePosition: '42% center',
+    description: 'Russia winding temperature monitoring configuration for cold climates, covering BWR WTI selection, capillary routing, contacts and remote signals.',
+    image: '/images/scenes/cases/russia-cold-climate.webp',
+    imagePosition: '50% center',
     applicationSlug: 'power-transformer-temperature-monitoring',
     productSlugs: ['bwr2-transformer-winding-temperature-indicator', 'bwr-04-06-winding-temperature-controller'],
     context: [
-      'This representative configuration considers an outdoor oil-immersed transformer winding temperature monitoring requirement in Russia. It does not identify a customer or completed project. The engineering focus is low ambient temperature, outdoor exposure and reliable transfer of the simulated winding value to local control and remote supervision.',
+      'Outdoor oil-immersed transformer winding temperature monitoring in Russia places particular emphasis on low ambient temperature, outdoor exposure and reliable transfer of the simulated winding value to local control and remote supervision.',
       'Cold-climate selection must start with the project environmental specification. Enclosure construction, sealing, capillary protection, cable entries, auxiliary equipment and any powered transmitter need to be checked against the stated minimum ambient and installation conditions.'
     ],
     requirement: [
       'The WTI must maintain clear local indication and operate the approved cooling, alarm or trip contacts. The current-derived heating system must correspond to the transformer CT data and required winding-to-oil temperature rise.',
-      'Remote monitoring may use Pt100 or a conditioned 4-20 mA signal according to the selected model and panel architecture. The field scale and receiving scale must match, and the signal circuit should be commissioned across representative values.'
+      'Remote monitoring may use Pt100 or a conditioned 4-20 mA signal according to the selected model and panel architecture. The field scale and receiving scale must match, and the signal circuit should be commissioned across several test values.'
     ],
     configuration: [
       'A BWR2 or BWR family winding temperature indicator can be reviewed after the full operating range, switch functions, CT interface, compound transmitter, output and capillary are defined. Environmental suffixes and current product drawings control the final selection.',
@@ -79,13 +77,13 @@ export const caseStudies: CaseStudy[] = [
     country: 'Vietnam',
     title: 'Vietnam Distribution Transformer Temperature Monitoring',
     seoTitle: 'Vietnam Distribution Transformer Temperature Monitoring | INNO',
-    description: 'Representative Vietnam distribution transformer temperature monitoring configuration using local oil indication, alarm contacts and optional remote condition data.',
-    image: '/images/scenes/transformer-substation-hero.png',
-    imagePosition: '86% center',
+    description: 'Vietnam distribution transformer temperature monitoring configuration using local oil indication, alarm contacts and optional remote condition data.',
+    image: '/images/scenes/cases/vietnam-distribution.webp',
+    imagePosition: '50% center',
     applicationSlug: 'distribution-transformer-temperature-monitoring',
     productSlugs: ['bwy2-transformer-oil-temperature-indicator', 'oil-temperature-level-pressure-monitoring-device'],
     context: [
-      'This representative configuration considers distribution transformer temperature monitoring in Vietnam. It describes a selection method for warm, humid and potentially unattended installations without claiming a particular utility, transformer factory or completed supply.',
+      'Distribution transformer temperature monitoring in Vietnam must account for warm, humid and potentially unattended installations. The selection method starts with the operating response required from each measured value.',
       'The monitoring architecture depends on who observes the transformer and what action follows an abnormal value. A regularly inspected unit may use robust local top-oil indication and alarm contacts. A remote site may justify a powered device that reports additional condition values.'
     ],
     requirement: [
@@ -107,13 +105,13 @@ export const caseStudies: CaseStudy[] = [
     country: 'Spain',
     title: 'Spain Renewable Substation Temperature Monitoring',
     seoTitle: 'Spain Renewable Substation Temperature Monitoring | INNO',
-    description: 'Representative Spain renewable substation temperature monitoring configuration covering OTI, WTI, cooling contacts and remote transformer temperature signals.',
-    image: '/images/scenes/transformer-temperature-inspection.png',
-    imagePosition: '68% center',
+    description: 'Spain renewable substation temperature monitoring configuration covering OTI, WTI, cooling contacts and remote transformer temperature signals.',
+    image: '/images/scenes/cases/spain-renewable.webp',
+    imagePosition: '50% center',
     applicationSlug: 'substation-remote-temperature-monitoring',
     productSlugs: ['bwy2-transformer-oil-temperature-indicator', 'bwr2-transformer-winding-temperature-indicator'],
     context: [
-      'This representative configuration describes a transformer temperature monitoring approach for a renewable-energy substation in Spain. It is not tied to a named solar developer, wind operator, EPC contractor or completed installation.',
+      'A renewable-energy substation in Spain benefits from a transformer temperature monitoring approach that separates local thermal indication, cooling control and remote supervisory signals.',
       'Variable generation can produce changing transformer load patterns. The monitoring scheme should preserve separate top-oil and simulated winding values so operators can relate temperature trends to loading and cooling state without treating the two measurements as equivalent.'
     ],
     requirement: [
@@ -121,7 +119,7 @@ export const caseStudies: CaseStudy[] = [
       'Remote data is selected around the substation RTU or control platform. Pt100, 4-20 mA and RS485 are different interfaces and require compatible receiving equipment, scale definitions and commissioning methods.'
     ],
     configuration: [
-      'A representative arrangement combines a BWY2 oil temperature indicator and a BWR2 winding temperature indicator. Final suffixes depend on range, contact quantity, output, capillary, CT interface, mounting and environmental requirements.',
+      'A practical arrangement combines a BWY2 oil temperature indicator and a BWR2 winding temperature indicator. Final suffixes depend on range, contact quantity, output, capillary, CT interface, mounting and environmental requirements.',
       'The project drawings should identify every sensing point, terminal, cable, signal scale and remote tag. Product drawings confirm the bulb, thread, mounting and enclosure before installation work begins.'
     ],
     interfaces: [
@@ -135,13 +133,13 @@ export const caseStudies: CaseStudy[] = [
     country: 'South Africa',
     title: 'South Africa Industrial Transformer Thermal Protection',
     seoTitle: 'South Africa Transformer Thermal Protection Configuration | INNO',
-    description: 'Representative South Africa industrial transformer thermal protection configuration using oil and winding temperature contacts for cooling, alarm and trip logic.',
-    image: '/images/scenes/transformer-substation-hero.png',
-    imagePosition: '60% center',
+    description: 'South Africa industrial transformer thermal protection configuration using oil and winding temperature contacts for cooling, alarm and trip logic.',
+    image: '/images/scenes/cases/south-africa-industrial.webp',
+    imagePosition: '50% center',
     applicationSlug: 'transformer-cooling-control-alarm-trip',
     productSlugs: ['bwy-d804aith-digital-oil-temperature-controller', 'bwr-04-06-winding-temperature-controller'],
     context: [
-      'This representative configuration considers thermal protection for an oil-immersed transformer serving an industrial power system in South Africa. It does not claim a named mine, plant, utility or completed INNO project.',
+      'Thermal protection for an oil-immersed transformer serving an industrial power system in South Africa requires a clear relationship between measured temperature, cooling control, alarm and trip logic.',
       'Industrial sites need a clear relationship between temperature indication and the action taken by the control circuit. Dust, ambient conditions, panel location, maintenance access and the duty of connected relays are defined before a temperature controller is selected.'
     ],
     requirement: [
@@ -163,13 +161,13 @@ export const caseStudies: CaseStudy[] = [
     country: 'Indonesia',
     title: 'Indonesia Hydropower Transformer Oil Temperature Monitoring',
     seoTitle: 'Indonesia Transformer Oil Temperature Monitoring | INNO',
-    description: 'Representative Indonesia hydropower transformer oil temperature monitoring configuration covering BWY indication, cooling contacts, humidity and remote integration.',
-    image: '/images/scenes/transformer-temperature-inspection.png',
-    imagePosition: '25% center',
+    description: 'Indonesia hydropower transformer oil temperature monitoring configuration covering BWY indication, cooling contacts, humidity and remote integration.',
+    image: '/images/scenes/cases/indonesia-hydropower.webp',
+    imagePosition: '50% center',
     applicationSlug: 'power-transformer-temperature-monitoring',
     productSlugs: ['bwy2-transformer-oil-temperature-indicator', 'bwy-d804aith-digital-oil-temperature-controller'],
     context: [
-      'This representative configuration considers oil temperature monitoring for an oil-immersed transformer at a hydropower application in Indonesia. It is a technical planning example and does not identify a power station, owner or completed supply.',
+      'Oil temperature monitoring for an oil-immersed transformer at an Indonesian hydropower application must account for high humidity, outdoor exposure and the control-room signal path.',
       'The project environment may combine high humidity, outdoor exposure and limited access to the transformer during operation. Instrument location, enclosure sealing, cable entries, capillary protection and safe maintenance clearance should be included in the installation review.'
     ],
     requirement: [

@@ -50,12 +50,23 @@ test('certification gallery contains twenty verified image assets', () => {
   assert.equal(images.length, 20);
 });
 
-test('representative case studies avoid unverified customer claims', () => {
+test('country case studies avoid unverified claims and public disclaimer copy', () => {
   const body = read('src/data/case-studies.ts');
   const count = (body.match(/slug:\s*'/g) || []).length;
   assert.equal(count, 6);
-  assert.match(body, /Representative Project Configuration/);
   assert.doesNotMatch(body, /State Grid|China Southern Power Grid|TBEA|successfully delivered|our customer/i);
+  assert.doesNotMatch(body, /representative project configuration|not (?:a |the )?(?:claim|customer|contract|completed|named)|does not (?:identify|claim)|planning example/i);
+
+  for (const file of ['src/pages/case-studies/index.astro', 'src/pages/case-studies/[slug].astro']) {
+    assert.doesNotMatch(read(file), /representative project configuration|not claims? about|does not identify|how to read these case studies/i, file);
+  }
+});
+
+test('each country case study uses a unique scene image', () => {
+  const body = read('src/data/case-studies.ts');
+  const images = [...body.matchAll(/image:\s*'([^']+)'/g)].map((match) => match[1]);
+  assert.equal(images.length, 6);
+  assert.equal(new Set(images).size, 6);
 });
 
 test('case cards link only image and title without generic detail copy', () => {
@@ -63,4 +74,16 @@ test('case cards link only image and title without generic detail copy', () => {
   assert.doesNotMatch(body, /learn more|read more/i);
   assert.match(body, /case-card-media/);
   assert.match(body, /<h3><a href=/);
+});
+
+test('solutions hub is integrated without generic detail links', () => {
+  const page = read('src/pages/solutions/index.astro');
+  const layout = read('src/layouts/BaseLayout.astro');
+  const data = read('src/data/solutions.ts');
+  assert.match(page, /<h1>Transformer Temperature Monitoring Solutions<\/h1>/);
+  assert.doesNotMatch(page, /learn more|read more/i);
+  assert.match(page, /solution-card-media/);
+  assert.match(page, /<h2><a href=/);
+  assert.match(layout, /\['Solutions','\/solutions\/'\]/);
+  assert.equal((data.match(/slug:\s*'/g) || []).length, 6);
 });

@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/BaseLayout.astro';
+import EmailCTA from '../../components/EmailCTA.astro';
+import { solutions } from '../../data/solutions';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Transformer Temperature Monitoring Solutions',
+  description: 'Problem-led transformer temperature monitoring solutions for OTI, WTI, cooling control, remote monitoring and retrofit selection.',
+  mainEntity: { '@type': 'ItemList', itemListElement: solutions.map((item, index) => ({ '@type': 'ListItem', position: index + 1, name: item.title, url: `https://ankaili.com${item.href}` })) }
+};
+---
+<Base title="Transformer Temperature Monitoring Solutions | INNO" description="Select transformer temperature monitoring solutions for OTI, WTI, BWY and BWR controllers, cooling control, remote monitoring and retrofit projects." schema={schema}>
+  <section class="page-hero"><div class="container"><p class="eyebrow">Problem-led engineering paths</p><h1>Transformer Temperature Monitoring Solutions</h1><p>Start with the measured variable and required operating action, then define the controller, signal and installation interfaces.</p></div></section>
+  <section class="section"><div class="container"><div class="answer-block"><strong>Solution selection answer.</strong> Choose a transformer temperature solution by defining whether the project needs top-oil measurement, simulated winding temperature, cooling control, alarm or trip contacts, remote data or replacement of an installed controller.</div><div class="section-head"><h2>Choose a Transformer Temperature Solution</h2><p class="lead">Each path connects the operating problem with the correct OTI, WTI, BWY, BWR or monitoring architecture.</p></div><div class="solution-grid">{solutions.map((item, index) => <article class="solution-card"><a class="solution-card-media" href={item.href} aria-label={`View ${item.title}`}><img src={item.image} alt={`${item.title} application environment`} width="1600" height="900" loading={index < 2 ? 'eager' : 'lazy'}></a><div class="solution-card-body"><p>{item.focus}</p><h2><a href={item.href}>{item.title}</a></h2><p>{item.description}</p></div></article>)}</div></div></section>
+  <section class="section tint"><article class="container prose"><h2>How INNO Structures a Monitoring Solution</h2><p>The solution begins with the thermal value. An oil temperature indicator follows top oil at the thermometer pocket. A traditional winding temperature indicator adds a load-current-related thermal simulation defined by the transformer design.</p><h3>Connect every value to an operating action</h3><p>Local indication, fan or pump control, alarm, trip and remote monitoring must each be assigned to a documented contact or signal. The receiving equipment, scale, contact load and commissioning method are confirmed before final model selection.</p><h3>Confirm the complete controller configuration</h3><p>BWY and BWR family names do not define every interface. Confirm the full model, range, switch functions, output, supply, capillary, sensing bulb, thread, mounting and environmental construction.</p></article></section>
+  <EmailCTA title="Plan a Transformer Temperature Monitoring Solution" subject="Transformer temperature monitoring solution review" />
+</Base>
