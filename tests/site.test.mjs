@@ -111,3 +111,12 @@ test('technical articles use five search-intent renderers', () => {
   }
   assert.doesNotMatch(body, /const paragraphs=\[/);
 });
+
+test('builds /sitemap.xml and advertises it in robots.txt', () => {
+  const packageJson=JSON.parse(read('package.json'));
+  const robots=read('public/robots.txt');
+  assert.match(packageJson.scripts.build,/scripts\/create-sitemap-alias\.mjs/);
+  assert.ok(fs.existsSync(path.join(root,'scripts','create-sitemap-alias.mjs')));
+  assert.match(read('scripts/create-sitemap-alias.mjs'),/^import /);
+  assert.match(robots,/Sitemap: https:\/\/ankaili\.com\/sitemap\.xml/);
+});

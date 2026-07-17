@@ -16,4 +16,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://ankaili.com/sitemap-index.xml
+Sitemap: https://ankaili.com/sitemap.xml
